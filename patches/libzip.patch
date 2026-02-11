@@ -1,0 +1,25 @@
+Subject: [PATCH] aea
+---
+Index: libziparchive/include/ziparchive/zip_writer.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/libziparchive/include/ziparchive/zip_writer.h b/libziparchive/include/ziparchive/zip_writer.h
+--- a/libziparchive/include/ziparchive/zip_writer.h	(revision a995a52802ae884cf71a9cc836e93a8b2f904b6f)
++++ b/libziparchive/include/ziparchive/zip_writer.h	(date 1770832068384)
+@@ -19,7 +19,6 @@
+ #include <cstdio>
+ #include <ctime>
+ 
+-#include <gtest/gtest_prod.h>
+ #include <memory>
+ #include <string>
+ #include <string_view>
+@@ -184,6 +183,4 @@
+ 
+   std::unique_ptr<z_stream, void (*)(z_stream*)> z_stream_;
+   std::vector<uint8_t> buffer_;
+-
+-  FRIEND_TEST(zipwriter, WriteToUnseekableFile);
+ };

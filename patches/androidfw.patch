@@ -1,35 +1,14 @@
-Submodule src/base contains modified content
-diff --git a/src/base/libs/androidfw/ResourceTypes.cpp b/src/base/libs/androidfw/ResourceTypes.cpp
-index cae2d0bc16b3..13c5f8fc84e8 100644
---- a/src/base/libs/androidfw/ResourceTypes.cpp
-+++ b/src/base/libs/androidfw/ResourceTypes.cpp
-@@ -43,7 +43,7 @@
- #include <utils/String16.h>
- #include <utils/String8.h>
- 
--#ifdef __ANDROID__
-+#if 0
- #include <binder/TextOutput.h>
- 
- #endif
-diff --git a/src/base/libs/androidfw/include/androidfw/ResourceTypes.h b/libs/androidfw/include/androidfw/ResourceTypes.h
-index 3d66244646d5..2d27c34a9154 100644
---- a/src/base/libs/androidfw/include/androidfw/ResourceTypes.h
-+++ b/src/base/libs/androidfw/include/androidfw/ResourceTypes.h
-@@ -500,7 +500,7 @@ struct ResStringPool_span
-
-     // The range of characters in the string that this span applies to.
-     uint32_t firstChar, lastChar;
--};
-+} __attribute__((__packed__, aligned(1)));
-
- /**
-  * Convenience class for accessing data in a ResStringPool resource.
+Subject: [PATCH] aea
+---
+Index: src/base/libs/androidfw/include/androidfw/StringPiece.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
 diff --git a/src/base/libs/androidfw/include/androidfw/StringPiece.h b/src/base/libs/androidfw/include/androidfw/StringPiece.h
-index 921877dc4982..27e27e1c2b94 100644
---- a/src/base/libs/androidfw/include/androidfw/StringPiece.h
-+++ b/src/base/libs/androidfw/include/androidfw/StringPiece.h
-@@ -75,6 +75,11 @@ class BasicStringPiece {
+--- a/src/base/libs/androidfw/include/androidfw/StringPiece.h	(revision 584338ea98273df82df5bc33ba137a0470cc82d6)
++++ b/src/base/libs/androidfw/include/androidfw/StringPiece.h	(date 1770832003745)
+@@ -75,6 +75,11 @@
    bool operator>(const BasicStringPiece<TChar>& rhs) const;
    bool operator==(const BasicStringPiece<TChar>& rhs) const;
    bool operator!=(const BasicStringPiece<TChar>& rhs) const;
@@ -41,7 +20,7 @@ index 921877dc4982..27e27e1c2b94 100644
  
    const_iterator begin() const;
    const_iterator end() const;
-@@ -256,6 +261,26 @@ inline bool BasicStringPiece<TChar>::operator!=(const BasicStringPiece<TChar>& r
+@@ -256,6 +261,26 @@
    return compare(rhs) != 0;
  }
  
@@ -68,3 +47,20 @@ index 921877dc4982..27e27e1c2b94 100644
  template <typename TChar>
  inline typename BasicStringPiece<TChar>::const_iterator BasicStringPiece<TChar>::begin() const {
    return data_;
+Index: src/base/libs/androidfw/ResourceTypes.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/base/libs/androidfw/ResourceTypes.cpp b/src/base/libs/androidfw/ResourceTypes.cpp
+--- a/src/base/libs/androidfw/ResourceTypes.cpp	(revision 584338ea98273df82df5bc33ba137a0470cc82d6)
++++ b/src/base/libs/androidfw/ResourceTypes.cpp	(date 1770832003774)
+@@ -43,7 +43,7 @@
+ #include <utils/String16.h>
+ #include <utils/String8.h>
+ 
+-#ifdef __ANDROID__
++#if 0
+ #include <binder/TextOutput.h>
+ 
+ #endif

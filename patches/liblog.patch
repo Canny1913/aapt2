@@ -1,0 +1,19 @@
+Subject: [PATCH] aea
+---
+Index: logging/liblog/logd_reader.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/logging/liblog/logd_reader.cpp b/logging/liblog/logd_reader.cpp
+--- a/logging/liblog/logd_reader.cpp	(revision 7c5c7094ef903bef02428f873ccd47c90443ba34)
++++ b/logging/liblog/logd_reader.cpp	(date 1770832064400)
+@@ -96,7 +96,7 @@
+   len = buf_size;
+   cp = buf;
+   while ((ret = TEMP_FAILURE_RETRY(read(sock, cp, len))) > 0) {
+-    if (((size_t)ret == len) || (buf_size < PAGE_SIZE)) {
++    if (((size_t)ret == len)) {
+       break;
+     }
+ 

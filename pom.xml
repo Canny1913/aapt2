@@ -1,0 +1,35 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.canny1913</groupId>
+    <artifactId>aapt2</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>janisslsm-canny</id>
+            <name>Personal Repository</name>
+            <url>https://mvn.janisslsm.id.lv/canny</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-artifact</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>linux</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
